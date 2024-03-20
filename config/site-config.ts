@@ -166,12 +166,12 @@ const GridItems: GridItemInterface[] = [
 ];
 
 export const siteConfig = {
-  creator: "Batuhan Bilgin",
-  title: "Developer & Creator",
-  bio: "Building AI products and creating video tutorials on Youtube.",
-  location: "Istanbul, Turkey",
+  creator: "Bilguun Gantogos",
+  title: "FullStack Developer",
+  bio: "I'm Bilguun, a developer from Ulaanbaatar. I'm interested in React, NextJS, Node and Music.",
+  location: "Ulaanbaatar, Mongolia",
   locationLink:
-    "https://www.google.com/maps/place/Kad%C4%B1k%C3%B6y%2F%C4%B0stanbul/@40.981133,29.063053,12z/data=!3m1!4b1!4m6!3m5!1s0x14cac790b17ba89d:0xd2d24ea0437a7ee2!8m2!3d40.981867!4d29.0576302!16zL20vMDV5cWY4?entry=ttu",
-  email: "batuhanbilginn@gmail.com",
+    "https://www.google.mn/maps/place/%D0%A3%D0%BB%D0%B0%D0%B0%D0%BD%D0%B1%D0%B0%D0%B0%D1%82%D0%B0%D1%80/@47.8915322,106.7370639,37373m/data=!3m2!1e3!4b1!4m6!3m5!1s0x5d96925be2b18aab:0xe606927864a1847f!8m2!3d47.9220509!4d106.9155007!16zL20vMGhxa2c?hl=mn&entry=ttu",
+  email: "gantogos.bilguun48@gmail.com",
   items: GridItems,
 } as const;
