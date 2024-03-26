@@ -7,3 +7,7 @@
     @apply h-full antialiased dark:bg-neutral-950 dark:text-neutral-50 text-neutral-100;
   }
 }
+
+.react-grid-item.react-grid-placeholder {
+  background-color: rgb(11, 104, 196);
+}

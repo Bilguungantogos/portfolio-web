@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
-import { ThemeToggle } from "./theme-toggle";
+import { ThemeToggle } from "../theme-toggle";
 import { siteConfig } from "@/config/site-config";
-
+import "./mygrid.css";
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 export const DragFromOutsideLayout = () => {
@@ -73,7 +73,7 @@ export const DragFromOutsideLayout = () => {
           }}
           className="flex items-center max-w-full space-x-6 rounded-3xl dark:bg-slate-700 px-8 "
         >
-          <div className="flex justify-between">
+          <div className="flex justify-between select-none">
             <img
               alt="avatar"
               src="/IMG_8615.jpeg"
@@ -84,14 +84,13 @@ export const DragFromOutsideLayout = () => {
             />
           </div>
           <div>
-            <div className="text-xl font-semibold text-primary ">
+            <div className="text-xl font-semibold text-primary select-none">
               {siteConfig.title}
             </div>
-            <h1 className="text-4xl font-bold my-2 text-white flex justify-between">
+            <h1 className="text-4xl font-bold my-2 text-white select-none">
               {siteConfig.creator}
-              <ThemeToggle />
             </h1>
-            <p className="text-2xl text-neutral-300 font-light">
+            <p className="text-2xl text-neutral-300 font-light select-none">
               {siteConfig.bio}
             </p>
           </div>
@@ -100,15 +99,13 @@ export const DragFromOutsideLayout = () => {
           key={layout[1].i}
           style={{
             backgroundColor: "#6464C8",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            fontSize: 50,
-            color: "white",
             borderRadius: "10px",
           }}
+          className="relative"
         >
-          {layout[1].i}
+          <div className="absolute top-[26%] left-[38%] translate-x-[50%] translate-y-[50%]">
+            <ThemeToggle />
+          </div>
         </div>
         <div
           key={layout[2].i}

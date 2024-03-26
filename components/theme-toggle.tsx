@@ -8,18 +8,34 @@ export function ThemeToggle() {
 
   return (
     <button
-      className="relative inline-flex mr-2 "
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      className="relative"
     >
-      <Sun
-        size="40"
-        className="transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0 text-slate-500"
-      />
-      <Moon
-        size="40"
-        className="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100"
-      />
-      <span className="sr-only">Toggle theme</span>
+      {theme === "light" ? (
+        <>
+          <Sun
+            size="80"
+            className="absolute transition-all scale-100 rotate-0 text-slate-100"
+          />
+          <Moon
+            size="80"
+            className="absolute transition-all scale-0 rotate-90"
+            style={{ visibility: "hidden" }}
+          />
+        </>
+      ) : (
+        <>
+          <Sun
+            size="80"
+            className="absolute transition-all scale-0 rotate-90"
+            style={{ visibility: "hidden" }}
+          />
+          <Moon
+            size="80"
+            className="absolute transition-all scale-100 rotate-0 text-slate-100"
+          />
+        </>
+      )}
     </button>
   );
 }
