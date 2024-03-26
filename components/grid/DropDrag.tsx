@@ -68,10 +68,13 @@ export const DragFromOutsideLayout = () => {
         <div
           key={layout[0].i}
           style={{
-            color: "white",
-            borderRadius: "10px",
+            color: "rgb(240, 242, 248)",
+            borderRadius: "32px",
+            backgroundColor: "rgb(13, 17, 23)",
+            boxShadow: "rgb(48, 54, 61) 0px 0px 0px 2px inset",
+            cursor: "grab",
           }}
-          className="flex items-center max-w-full space-x-6 rounded-3xl dark:bg-slate-700 px-8 "
+          className="flex items-center max-w-full space-x-6 dark:bg-slate-700 px-8 "
         >
           <div className="flex justify-between select-none">
             <img
@@ -98,12 +101,12 @@ export const DragFromOutsideLayout = () => {
         <div
           key={layout[1].i}
           style={{
-            backgroundColor: "#6464C8",
-            borderRadius: "10px",
+            backgroundColor: "rgb(13, 17, 23)",
+            borderRadius: "32px",
           }}
           className="relative"
         >
-          <div className="absolute top-[26%] left-[38%] translate-x-[50%] translate-y-[50%]">
+          <div className="absolute top-[26%] left-[38%] translate-x-[50%] translate-y-[50%] z-20 bg-slate-900">
             <ThemeToggle />
           </div>
         </div>

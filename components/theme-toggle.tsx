@@ -8,7 +8,7 @@ export function ThemeToggle() {
 
   return (
     <button
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onMouseDown={() => setTheme(theme === "light" ? "dark" : "light")}
       className="relative"
     >
       {theme === "light" ? (
