@@ -7,6 +7,7 @@ import "/node_modules/react-resizable/css/styles.css";
 import { ThemeToggle } from "../theme-toggle";
 import { siteConfig } from "@/config/site-config";
 import "./mygrid.css";
+import { Button } from "../ui/button";
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 export const DragFromOutsideLayout = () => {
@@ -70,11 +71,9 @@ export const DragFromOutsideLayout = () => {
           style={{
             color: "rgb(240, 242, 248)",
             borderRadius: "32px",
-            backgroundColor: "rgb(13, 17, 23)",
-            boxShadow: "rgb(48, 54, 61) 0px 0px 0px 2px inset",
             cursor: "grab",
           }}
-          className="flex items-center max-w-full space-x-6 dark:bg-slate-700 px-8 "
+          className="flex items-center max-w-full space-x-6 dark:bg-slate-700 px-8 bg-[#0d1117D9] shadow-2xl"
         >
           <div className="flex justify-between select-none">
             <img
@@ -101,7 +100,7 @@ export const DragFromOutsideLayout = () => {
         <div
           key={layout[1].i}
           style={{
-            backgroundColor: "rgb(13, 17, 23)",
+            backgroundColor: "#0d1117D9",
             borderRadius: "32px",
           }}
           className="relative"
@@ -127,16 +126,20 @@ export const DragFromOutsideLayout = () => {
         <div
           key={layout[3].i}
           style={{
-            backgroundColor: "#6464C8",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            fontSize: 50,
+            backgroundColor: "#0d1117D9",
             color: "white",
             borderRadius: "10px",
           }}
         >
-          {layout[3].i}
+          <Button
+            variant="default"
+            className="bg-slate-700 rounded-[20px] py-6 px-6 text-xl shadow-lg"
+          >
+            Download CV
+          </Button>
         </div>
         <div
           key={layout[4].i}

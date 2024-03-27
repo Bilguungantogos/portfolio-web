@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="h-full">
       <Header />
-      <div className="lg:px-16 md:px-12 sm:px-8 xs:px-4 bg-slate-300">
+      <div className="lg:px-16 md:px-12 sm:px-8 xs:px-4 dark:bg-[#090c10]">
         <DragFromOutsideLayout />
       </div>
     </main>
