@@ -9,13 +9,14 @@ import { siteConfig } from "@/config/site-config";
 import "./mygrid.css";
 import { Button } from "../ui/button";
 import { FaGithub } from "react-icons/fa6";
-import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 export const DragFromOutsideLayout = () => {
   const [mounted, setmounted] = useState(false);
+  const [isDraggable, setIsDraggable] = useState(true);
+
   const layout = [
     { i: "a", x: 0, y: 0, w: 2, h: 1 },
     { i: "c", x: 2, y: 0, w: 1, h: 1 },
@@ -39,7 +40,18 @@ export const DragFromOutsideLayout = () => {
 
   useEffect(() => {
     setmounted(true);
+    const isMobileWidth = window.innerWidth < 768;
+    setIsDraggable(isMobileWidth ? false : true);
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+  const handleResize = () => {
+    const isMobileWidth = window.innerWidth < 768;
+    setIsDraggable(isMobileWidth ? false : true);
+  };
 
   return (
     <div className="">
@@ -57,6 +69,8 @@ export const DragFromOutsideLayout = () => {
         rowHeight={280}
         width={1200}
         measureBeforeMount={false}
+        isDraggable={isDraggable}
+        isResizable={false}
         useCSSTransforms={mounted}
         onLayoutChange={(layout) => console.log(layout)}
         margin={[16, 16]}
