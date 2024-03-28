@@ -8,6 +8,10 @@ import { ThemeToggle } from "../theme-toggle";
 import { siteConfig } from "@/config/site-config";
 import "./mygrid.css";
 import { Button } from "../ui/button";
+import { FaGithub } from "react-icons/fa6";
+import Link from "next/link";
+import { MdArrowOutward } from "react-icons/md";
+
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 export const DragFromOutsideLayout = () => {
@@ -20,16 +24,19 @@ export const DragFromOutsideLayout = () => {
     { i: "h", x: 3, y: 2, w: 2, h: 1 },
     { i: "e", x: 0, y: 1, w: 1, h: 2 },
     { i: "f", x: 1, y: 1, w: 2, h: 1 },
+    { i: "j", x: 2, y: 0, w: 1, h: 1 },
+  ];
+  const layoutsm = [
+    { i: "a", x: 0, y: 0, w: 2, h: 0.6 },
+    { i: "c", x: 2, y: 0, w: 1, h: 0.6 },
+    { i: "d", x: 3, y: 0, w: 1, h: 1.2 },
+    { i: "g", x: 1, y: 2, w: 1, h: 0.6 },
+    { i: "h", x: 3, y: 2, w: 2, h: 0.6 },
+    { i: "e", x: 0, y: 1, w: 1, h: 1.2 },
+    { i: "f", x: 1, y: 1, w: 2, h: 0.6 },
+    { i: "j", x: 2, y: 0, w: 1, h: 0.6 },
   ];
 
-  const rowsMax = 8;
-  const columnsMax = 4;
-  const layout2 = [];
-
-  for (let i = 0; i < rowsMax; i++) {
-    for (let j = 0; j < columnsMax; j++)
-      layout2.push({ i: `a${i}-${j}`, x: i, y: j, w: 1, h: 1 });
-  }
   useEffect(() => {
     setmounted(true);
   }, []);
@@ -43,9 +50,9 @@ export const DragFromOutsideLayout = () => {
           md: layout,
           sm: layout,
           xs: layout,
-          xxs: layout,
+          xxs: layoutsm,
         }}
-        cols={{ lg: 4, md: 4, sm: 3, xs: 2, xxs: 1 }}
+        cols={{ lg: 4, md: 4, sm: 3, xs: 2, xxs: 2 }}
         compactType="vertical"
         rowHeight={280}
         width={1200}
@@ -73,7 +80,7 @@ export const DragFromOutsideLayout = () => {
             borderRadius: "32px",
             cursor: "grab",
           }}
-          className="flex items-center max-w-full space-x-6 dark:bg-slate-700 px-8 bg-[#0d1117D9] shadow-2xl"
+          className="flex items-center space-x-6 dark:bg-slate-700 px-8 bg-[#0d1117D9] shadow-2xl"
         >
           <div className="flex justify-between select-none">
             <img
@@ -105,8 +112,11 @@ export const DragFromOutsideLayout = () => {
           }}
           className="relative"
         >
-          <div className="absolute top-[26%] left-[38%] translate-x-[50%] translate-y-[50%] z-20 bg-slate-900">
+          <div className="">
             <ThemeToggle />
+            <p className="absolute bottom-2 left-5 text-sm">
+              Click the icon to switch the theme.
+            </p>
           </div>
         </div>
         <div
@@ -131,7 +141,7 @@ export const DragFromOutsideLayout = () => {
             alignItems: "center",
             backgroundColor: "#0d1117D9",
             color: "white",
-            borderRadius: "10px",
+            borderRadius: "32px",
           }}
         >
           <Button
@@ -153,7 +163,7 @@ export const DragFromOutsideLayout = () => {
             borderRadius: "10px",
           }}
         >
-          {layout[4].i}
+          h
         </div>
         <div
           key={layout[5].i}
@@ -182,6 +192,28 @@ export const DragFromOutsideLayout = () => {
           }}
         >
           {layout[6].i}
+        </div>
+        <div
+          key={layout[7].i}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            fontSize: 50,
+            color: "white",
+            borderRadius: "10px",
+          }}
+          className="relative bg-[#0d1117D9]"
+        >
+          <FaGithub />
+          <a
+            className="absolute bottom-3 left-3 bg-slate-400 rounded-full"
+            onClick={() => {
+              window.open("https://github.com/Bilguungantogos");
+            }}
+          >
+            <MdArrowOutward size={40} className="p-2" />
+          </a>
         </div>
       </ResponsiveReactGridLayout>
     </div>
