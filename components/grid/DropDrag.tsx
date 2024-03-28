@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
-import { ThemeToggle } from "../theme-toggle";
+import ThemeSwitch from "../theme-toggle";
 import { siteConfig } from "@/config/site-config";
 import "./mygrid.css";
 import { Button } from "../ui/button";
@@ -124,10 +124,10 @@ export const DragFromOutsideLayout = () => {
             backgroundColor: "#0d1117D9",
             borderRadius: "32px",
           }}
-          className="relative"
+          className="relative flex justify-center items-center"
         >
           <div className="">
-            <ThemeToggle />
+            <ThemeSwitch />
             <p className="absolute bottom-2 left-5 text-sm">
               Click the icon to switch the theme.
             </p>
@@ -215,14 +215,14 @@ export const DragFromOutsideLayout = () => {
             alignItems: "center",
             fontSize: 50,
             color: "white",
-            borderRadius: "10px",
+            borderRadius: "32px",
           }}
           className="relative bg-[#0d1117D9]"
         >
           <FaGithub />
           <a
-            className="absolute bottom-3 left-3 bg-slate-400 rounded-full"
-            onClick={() => {
+            className="absolute bottom-3 left-3 bg-slate-400 rounded-full cursor-pointer"
+            onMouseUp={() => {
               window.open("https://github.com/Bilguungantogos");
             }}
           >
