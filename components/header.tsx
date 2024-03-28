@@ -1,10 +1,9 @@
 "use client";
 
-import { useTheme } from "next-themes";
-import React from "react";
+import React, { useState } from "react";
 
 const Header = () => {
-  const { theme } = useTheme();
+  const [theme, setTheme] = useState("light");
   return (
     <div className="flex justify-between items-center lg:mx-20 py-4 mt-4 dark:text-white text-black">
       {theme === "light" ? (

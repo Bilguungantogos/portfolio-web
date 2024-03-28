@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import localFont from "next/font/local";
 
 const sfPRO = localFont({
@@ -51,9 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
       <body className={sfPRO.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="flex-col flex h-full">{children}</div>
-        </ThemeProvider>
+        <div className="flex-col flex h-full">{children}</div>
       </body>
     </html>
   );
