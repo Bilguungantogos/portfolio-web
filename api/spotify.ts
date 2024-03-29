@@ -66,20 +66,3 @@ export const getAuth = async () => {
   }
 };
 
-export const getAudioFeatures_Track = async () => {
-  const access_token = await getAuth();
-
-  const api_url = `https://api.spotify.com/v1/tracks?ids=4N2qNs5FhQHZh4YtdIWy2v`;
-
-  try {
-    const response = await axios.get(api_url, {
-      headers: {
-        Authorization: `Bearer ${access_token}`,
-      },
-    });
-    console.log(response.data);
-    return response.data;
-  } catch (error) {
-    console.log(error);
-  }
-};
