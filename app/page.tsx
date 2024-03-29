@@ -1,14 +1,11 @@
 "use client";
 
-import { getAudioFeatures_Track, getAuth } from "@/api/spotify";
+import { getAuth } from "@/api/spotify";
 import { DragFromOutsideLayout } from "@/components/grid/DropDrag";
 import Header from "@/components/header";
 import { useEffect } from "react";
 
 export default function Home() {
-  useEffect(() => {
-    getAudioFeatures_Track();
-  }, []);
   return (
     <main className="h-full">
       <Header />

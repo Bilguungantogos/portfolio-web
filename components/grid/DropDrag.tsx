@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
@@ -10,6 +10,12 @@ import "./mygrid.css";
 import { Button } from "../ui/button";
 import { FaGithub } from "react-icons/fa6";
 import { MdArrowOutward } from "react-icons/md";
+import { FaSpotify } from "react-icons/fa";
+import { ApiContext } from "@/context/apidata-context";
+import { getAuth } from "@/api/spotify";
+import axios from "axios";
+import UseAnimations from "react-useanimations";
+import activity from "react-useanimations/lib/activity";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
@@ -26,6 +32,7 @@ export const DragFromOutsideLayout = () => {
     { i: "e", x: 0, y: 1, w: 1, h: 2 },
     { i: "f", x: 1, y: 1, w: 2, h: 1 },
     { i: "j", x: 2, y: 0, w: 1, h: 1 },
+    { i: "i", x: 2, y: 0, w: 1, h: 1 },
   ];
   const layoutsm = [
     { i: "a", x: 0, y: 0, w: 2, h: 0.6 },
@@ -36,6 +43,7 @@ export const DragFromOutsideLayout = () => {
     { i: "e", x: 0, y: 1, w: 1, h: 1.2 },
     { i: "f", x: 1, y: 1, w: 2, h: 0.6 },
     { i: "j", x: 2, y: 0, w: 1, h: 0.6 },
+    { i: "i", x: 2, y: 0, w: 1, h: 0.6 },
   ];
 
   useEffect(() => {
@@ -52,6 +60,29 @@ export const DragFromOutsideLayout = () => {
     const isMobileWidth = window.innerWidth < 768;
     setIsDraggable(isMobileWidth ? false : true);
   };
+  const [tracks, setTracks] = useState<any>({});
+  const [artist, setArtist] = useState<any>({});
+  useEffect(() => {
+    const getAudioFeatures_Track = async () => {
+      const access_token = await getAuth();
+
+      const api_url = `https://api.spotify.com/v1/tracks?ids=4N2qNs5FhQHZh4YtdIWy2v`;
+
+      try {
+        const response = await axios.get(api_url, {
+          headers: {
+            Authorization: `Bearer ${access_token}`,
+          },
+        });
+        console.log(response.data);
+        setTracks(response.data.tracks[0]);
+        setArtist(response.data.tracks[0].artists[0]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getAudioFeatures_Track();
+  }, []);
 
   return (
     <div className="">
@@ -228,6 +259,43 @@ export const DragFromOutsideLayout = () => {
           >
             <MdArrowOutward size={40} className="p-2" />
           </a>
+        </div>
+        <div
+          key={layout[8].i}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "#0d1117D9",
+            color: "white",
+            borderRadius: "32px",
+          }}
+        >
+          <div className="p-8 h-full flex flex-col justify-between">
+            <a
+              onMouseDown={() => {
+                window.open(
+                  "https://open.spotify.com/playlist/5B53KpbxKXlM8DPeVEqAhr"
+                );
+              }}
+              className="cursor-pointer size-[80px]"
+            >
+              <FaSpotify size={"full"} />
+            </a>
+            <div>
+              <div className="flex items-center">
+                <UseAnimations
+                  animation={activity}
+                  size={36}
+                  fillColor={"green"}
+                  strokeColor="green"
+                />
+                <p className="text-lg">Now Playing...</p>
+              </div>
+              <p className="text-lg mt-1">{tracks?.name}</p>
+              <p className="text-2xl text-bold">{artist?.name}</p>
+            </div>
+          </div>
         </div>
       </ResponsiveReactGridLayout>
     </div>
