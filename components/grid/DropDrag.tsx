@@ -16,12 +16,12 @@ import axios from "axios";
 import UseAnimations from "react-useanimations";
 import activity from "react-useanimations/lib/activity";
 import MySkills from "../griditems/myskills";
+import { isMobile } from "react-device-detect";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 export const DragFromOutsideLayout = () => {
   const [mounted, setmounted] = useState(false);
-  const [isDraggable, setIsDraggable] = useState(true);
 
   const layout = [
     { i: "a", x: 0, y: 0, w: 2, h: 1 },
@@ -46,20 +46,23 @@ export const DragFromOutsideLayout = () => {
     { i: "i", x: 2, y: 0, w: 1, h: 0.6 },
   ];
 
+  const [isDraggable, setIsDraggable] = useState(true);
+
   useEffect(() => {
     setmounted(true);
-    const isMobileWidth = window.innerWidth < 768;
-    setIsDraggable(isMobileWidth ? false : true);
+    setIsDraggable(!isMobile);
+
+    const handleResize = () => {
+      setIsDraggable(!isMobile);
+    };
 
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  const handleResize = () => {
-    const isMobileWidth = window.innerWidth < 768;
-    setIsDraggable(isMobileWidth ? false : true);
-  };
+
   const [tracks, setTracks] = useState<any>({});
   const [artist, setArtist] = useState<any>({});
   useEffect(() => {
@@ -232,7 +235,7 @@ export const DragFromOutsideLayout = () => {
             color: "white",
             borderRadius: "32px",
           }}
-          className="px-8 pt-8 pb-12"
+          className="px-8 pt-8 pb-12 "
         >
           <MySkills />
         </div>
