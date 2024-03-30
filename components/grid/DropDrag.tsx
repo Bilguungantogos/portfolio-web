@@ -11,11 +11,11 @@ import { Button } from "../ui/button";
 import { FaGithub } from "react-icons/fa6";
 import { MdArrowOutward } from "react-icons/md";
 import { FaSpotify } from "react-icons/fa";
-import { ApiContext } from "@/context/apidata-context";
 import { getAuth } from "@/api/spotify";
 import axios from "axios";
 import UseAnimations from "react-useanimations";
 import activity from "react-useanimations/lib/activity";
+import MySkills from "../griditems/myskills";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
@@ -227,16 +227,14 @@ export const DragFromOutsideLayout = () => {
         <div
           key={layout[6].i}
           style={{
-            backgroundColor: "#6464C8",
+            backgroundColor: "#0d1117D9",
             display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            fontSize: 50,
             color: "white",
-            borderRadius: "10px",
+            borderRadius: "32px",
           }}
+          className="px-8 pt-8 pb-12"
         >
-          {layout[6].i}
+          <MySkills />
         </div>
         <div
           key={layout[7].i}
@@ -273,17 +271,17 @@ export const DragFromOutsideLayout = () => {
         >
           <div className="p-8 h-full flex flex-col justify-between">
             <a
-              onMouseDown={() => {
+              onMouseUp={() => {
                 window.open(
                   "https://open.spotify.com/playlist/5B53KpbxKXlM8DPeVEqAhr"
                 );
               }}
-              className="cursor-pointer size-[80px]"
+              className="cursor-pointer size-[50px]"
             >
               <FaSpotify size={"full"} />
             </a>
             <div>
-              <div className="flex items-center">
+              <div className="flex items-center select-none">
                 <UseAnimations
                   animation={activity}
                   size={36}
@@ -292,8 +290,8 @@ export const DragFromOutsideLayout = () => {
                 />
                 <p className="text-lg">Now Playing...</p>
               </div>
-              <p className="text-lg mt-1">{tracks?.name}</p>
-              <p className="text-2xl text-bold">{artist?.name}</p>
+              <p className="text-lg mt-1 select-none">{tracks?.name}</p>
+              <p className="text-2xl text-bold select-none">{artist?.name}</p>
             </div>
           </div>
         </div>
