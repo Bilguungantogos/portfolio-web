@@ -1,21 +1,22 @@
 "use client";
 
 import React, { useState } from "react";
+import { useTheme } from "@/context/theme-context";
 
 const Header = () => {
-  const [theme, setTheme] = useState("light");
+  const { theme } = useTheme();
   return (
-    <div className="flex justify-between items-center lg:mx-20 py-4 mt-4 dark:text-white text-black">
+    <div className="flex justify-between items-center max-md:flex-col max-md:gap-4 lg:mx-20 md:mx-20 py-4 mt-4 dark:text-white text-black">
       {theme === "light" ? (
         <img
           src="logo.png"
-          className="lg:h-[30px] lg:w-[160px] md:w-8 md:h-8 sm:w-6 sm:h-6 xs:w-4 xs:h-4 object-cover"
+          className="max-lg:h-[30px] max-lg:w-[160px] w-[160px] h-[30px] object-cover"
           alt="Light logo"
         />
       ) : (
         <img
           src="logowhite.png"
-          className="lg:h-[30px] lg:w-[160px] md:w-8 md:h-8 sm:w-6 sm:h-6 xs:w-4 xs:h-4 object-cover"
+          className="max-lg:h-[30px] max-lg:w-[160px] w-[160px] h-[30px] object-cover"
           alt="Dark logo"
         />
       )}
@@ -26,7 +27,7 @@ const Header = () => {
         <p className="hover:bg-slate-300 rounded-full px-2">Project</p>
         <p className="hover:bg-slate-300 rounded-full px-2">Media</p>
       </div>
-      <button className="text-xl" onClick={() => {}}>
+      <button className="max-md:text-xl max-md:hidden" onClick={() => {}}>
         Contact me
       </button>
     </div>
