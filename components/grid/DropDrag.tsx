@@ -60,7 +60,7 @@ export const DragFromOutsideLayout = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className="bg-[#F6F2F2] dark:bg-[#090c10]">
       <ResponsiveReactGridLayout
         className=""
         layouts={{
@@ -86,59 +86,59 @@ export const DragFromOutsideLayout = () => {
           style={{
             color: "rgb(240, 242, 248)",
           }}
-          className=" dark:bg-slate-700 lg:px-8 px-4 bg-[#0d1117D9] shadow-2xl cursor-grab flex items-center rounded-[32px]"
+          className="  lg:px-8 px-4 dark:dark:bg-[#0d1117D9] bg-[#FFFFFF] dark:text-white text-[#0F1117] cursor-grab flex items-center rounded-[32px]"
         >
           <AboutMe />
         </div>
         <div
           key={layout[1].i}
-          className="relative flex justify-center items-center bg-[#0d1117D9] rounded-[32px]"
+          className="relative flex justify-center items-center dark:dark:bg-[#0d1117D9] bg-[#FFFFFF] rounded-[32px]"
         >
           <div className="">
             <ThemeSwitch />
-            <p className="absolute bottom-2 left-5 text-sm">
+            <p className="text-black dark:text-white absolute bottom-2 left-5 text-sm max-[481px]:text-[10px]">
               Click the icon to switch the theme.
             </p>
           </div>
         </div>
         <div
           key={layout[2].i}
-          className=" flex justify-center items-center bg-[#0d1117D9] text-white rounded-[32px] "
+          className=" flex justify-center items-center dark:bg-[#0d1117D9] dark:text-white bg-[#FFFFFF] text-[#0F1117] rounded-[32px] "
         >
           {layout[2].i}
         </div>
         <div
           key={layout[3].i}
-          className=" flex justify-center items-center bg-[#0d1117D9] text-white rounded-[32px]"
+          className=" flex justify-center items-center dark:bg-[#0d1117D9] dark:text-white bg-[#FFFFFF] text-[#0F1117] rounded-[32px]"
         >
           <Button
             variant="default"
-            className="bg-slate-700 rounded-[20px] py-6 px-6 lg:text-xl shadow-lg"
+            className="dark:bg-slate-700 bg-slate-300 rounded-[20px] py-6 px-6 lg:text-xl shadow-lg"
           >
             Download CV
           </Button>
         </div>
         <div
           key={layout[4].i}
-          className=" flex justify-center items-center bg-[#0d1117D9] text-white rounded-[32px] "
+          className=" flex justify-center items-center dark:bg-[#0d1117D9] dark:text-white bg-[#FFFFFF] text-[#0F1117] rounded-[32px] "
         >
           h
         </div>
         <div
           key={layout[5].i}
-          className=" flex justify-center items-center bg-[#0d1117D9] text-white rounded-[32px] "
+          className=" flex justify-center items-center dark:bg-[#0d1117D9] dark:text-white bg-[#FFFFFF] text-[#0F1117] rounded-[32px] "
         >
           {layout[5].i}
         </div>
         <div
           key={layout[6].i}
-          className="flex bg-[#0d1117D9] px-8 pt-8 pb-12 text-white rounded-[32px] "
+          className="flex dark:bg-[#0d1117D9] px-8 pt-8 pb-12 max-[481px]:px-2 max-[481px]:py-4 bg-[#FFFFFF] dark:text-white text-[#0F1117] rounded-[32px] "
         >
           <MySkills />
         </div>
         <div
           key={layout[7].i}
-          className="flex justify-center items-center relative bg-[#0d1117D9] text-white rounded-[32px] text-[50px]"
+          className="flex justify-center items-center relative dark:bg-[#0d1117D9] dark:text-white bg-[#FFFFFF] text-[#0F1117] rounded-[32px] text-[50px]"
         >
           <FaGithub />
           <a
@@ -152,7 +152,7 @@ export const DragFromOutsideLayout = () => {
         </div>
         <div
           key={layout[8].i}
-          className="flex justify-center items-center text-white rounded-[32px] bg-[#0d1117D9]"
+          className="flex justify-center items-center dark:text-white text-[#0F1117] rounded-[32px] bg-[#FFFFFF] dark:bg-[#0d1117D9]"
         >
           <SpotifyItem />
         </div>

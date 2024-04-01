@@ -12,51 +12,93 @@ import { IoLogoSass } from "react-icons/io";
 
 const MySkills = () => {
   return (
-    <div className="flex flex-col justify-between select-none">
-      <p className="text-light text-lg text-slate-300 px-6 select-none">
+    <div className="flex flex-col justify-between select-none ">
+      <p className="text-light text-lg text-slate-300 px-6 max-[481px]:px-4 max-[481px]:text-sm select-none">
         I have been working on a project involving the utilization of these
         languages and tools:
       </p>
-      <p className="flex flex-wrap justify-center gap-8">
+      <p className="flex flex-wrap justify-center gap-8 max-[481px]:gap-4">
         <a
           href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
           target="_blank"
           rel="noreferrer"
+          className="size-[40px] max-[481px]:size-[30px]"
         >
-          <IoLogoJavascript size={40} />
+          <IoLogoJavascript size={"full"} />
         </a>
         <a
           href="https://www.typescriptlang.org/"
           target="_blank"
           rel="noreferrer"
+          className="size-[40px] max-[481px]:size-[30px]"
         >
-          <BiLogoTypescript size={40} />
+          <BiLogoTypescript size={"full"} />
         </a>
-        <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
-          <IoLogoReact size={40} />
+        <a
+          href="https://reactjs.org/"
+          target="_blank"
+          rel="noreferrer"
+          className="size-[40px] max-[481px]:size-[30px]"
+        >
+          <IoLogoReact size={"full"} />
         </a>
-        <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
-          <SiNextdotjs size={40} />
+        <a
+          href="https://nextjs.org/"
+          target="_blank"
+          rel="noreferrer"
+          className="size-[40px] max-[481px]:size-[30px]"
+        >
+          <SiNextdotjs size={"full"} />
         </a>
-        <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
-          <TbBrandTailwind size={40} />
+        <a
+          href="https://tailwindcss.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="size-[40px] max-[481px]:size-[30px]"
+        >
+          <TbBrandTailwind size={"full"} />
         </a>
 
-        <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer">
-          <BiLogoMongodb size={40} />
+        <a
+          href="https://www.mongodb.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="size-[40px] max-[481px]:size-[30px]"
+        >
+          <BiLogoMongodb size={"full"} />
         </a>
-        <a href="https://www.mysql.com/" target="_blank" rel="noreferrer">
-          <SiMysql size={40} />
+        <a
+          href="https://www.mysql.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="size-[40px] max-[481px]:size-[30px]"
+        >
+          <SiMysql size={"full"} />
         </a>
 
-        <a href="https://nodejs.org" target="_blank" rel="noreferrer">
-          <IoLogoNodejs size={40} />
+        <a
+          href="https://nodejs.org"
+          target="_blank"
+          rel="noreferrer"
+          className="size-[40px] max-[481px]:size-[30px]"
+        >
+          <IoLogoNodejs size={"full"} />
         </a>
-        <a href="https://www.postgresql.org" target="_blank" rel="noreferrer">
-          <BiLogoPostgresql size={40} />
+        <a
+          href="https://www.postgresql.org"
+          target="_blank"
+          rel="noreferrer"
+          className="size-[40px] max-[481px]:size-[30px]"
+        >
+          <BiLogoPostgresql size={"full"} />
         </a>
-        <a href="https://sass-lang.com" target="_blank" rel="noreferrer">
-          <IoLogoSass size={40} />
+        <a
+          href="https://sass-lang.com"
+          target="_blank"
+          rel="noreferrer"
+          className="size-[40px] max-[481px]:size-[30px]"
+        >
+          <IoLogoSass size={"full"} />
         </a>
       </p>
     </div>
