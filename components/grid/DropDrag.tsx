@@ -13,7 +13,12 @@ import MySkills from "../griditems/myskills";
 import { isMobile } from "react-device-detect";
 import AboutMe from "../griditems/aboutme";
 import SpotifyItem from "../griditems/spotifyItem";
-import { CinemaAppItem, FoodDeliveryAppItem } from "../griditems/project";
+import {
+  BlankProject,
+  CinemaAppItem,
+  FoodDeliveryAppItem,
+} from "../griditems/project";
+import { motion } from "framer-motion";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
@@ -102,23 +107,18 @@ export const DragFromOutsideLayout = () => {
             </p>
           </div>
         </div>
-        <div
-          key={layout[2].i}
-          className="rounded-[32px] overflow-hidden relative"
-        >
+        <div key={layout[2].i} className="rounded-[32px] overflow-hidden ">
           <FoodDeliveryAppItem />
-          <Button className="w-10 h-10 absolute">
-            to Github adawdadwadwadawdwadwa
-          </Button>
         </div>
         <div
           key={layout[3].i}
           className=" flex justify-center items-center dark:bg-[#0d1117D9] dark:text-white bg-[#FFFFFF] text-[#0F1117] rounded-[32px]"
         >
-          <Button
-            variant="default"
-            className="dark:bg-slate-700 bg-slate-300 rounded-[20px] py-6 px-6 lg:text-xl shadow-lg"
-            onMouseDown={(e) => {
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="dark:bg-slate-700 bg-[#F6F2F2] rounded-[20px] py-4 px-6 lg:text-xl shadow-lg"
+            onMouseDown={(e: any) => {
               e.stopPropagation();
               window.open(
                 "https://www.figma.com/proto/OOYYZWSg6qJ9vZxeOIVoAC/CV-Bilguun-Gantogos?node-id=1-9"
@@ -126,13 +126,13 @@ export const DragFromOutsideLayout = () => {
             }}
           >
             Click to review my CV
-          </Button>
+          </motion.button>
         </div>
         <div
           key={layout[4].i}
-          className=" flex justify-center items-center dark:bg-[#0d1117D9] dark:text-white bg-[#FFFFFF] text-[#0F1117] rounded-[32px] "
+          className=" dark:text-white  text-[#0F1117] rounded-[32px] overflow-hidden "
         >
-          Blank
+          <BlankProject />
         </div>
         <div
           key={layout[5].i}
@@ -151,7 +151,9 @@ export const DragFromOutsideLayout = () => {
           className="flex justify-center items-center relative dark:bg-[#0d1117D9] dark:text-white bg-[#FFFFFF] text-[#0F1117] rounded-[32px] text-[50px]"
         >
           <FaGithub />
-          <a
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             className="absolute bottom-3 left-3 bg-slate-400 rounded-full cursor-pointer"
             onMouseDown={(e) => {
               e.stopPropagation();
@@ -159,7 +161,7 @@ export const DragFromOutsideLayout = () => {
             }}
           >
             <MdArrowOutward size={40} className="p-2" />
-          </a>
+          </motion.button>
         </div>
         <div
           key={layout[8].i}

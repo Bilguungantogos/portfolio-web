@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { FaSpotify } from "react-icons/fa";
 import UseAnimations from "react-useanimations";
 import activity from "react-useanimations/lib/activity";
+import { motion } from "framer-motion";
 
 const SpotifyItem = () => {
   const [tracks, setTracks] = useState<any>({});
@@ -34,8 +35,10 @@ const SpotifyItem = () => {
 
   return (
     <div className="sm:p-3 lg:p-8 md:p-8 xl:p-8 p-3 h-full flex flex-col justify-between">
-      <a
-        onMouseDown={(e) => {
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onMouseDown={(e: any) => {
           e.stopPropagation();
           window.open(
             "https://open.spotify.com/playlist/5B53KpbxKXlM8DPeVEqAhr"
@@ -44,7 +47,7 @@ const SpotifyItem = () => {
         className="cursor-pointer max-sm:size-[35px] size-[50px]"
       >
         <FaSpotify size={"full"} />
-      </a>
+      </motion.button>
       <div>
         <div className="flex items-center select-none">
           <UseAnimations

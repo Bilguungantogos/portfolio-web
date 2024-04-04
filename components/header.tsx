@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useTheme } from "@/context/theme-context";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const { theme } = useTheme();
@@ -27,9 +28,13 @@ const Header = () => {
         <p className="hover:bg-slate-300 rounded-full px-2">Project</p>
         <p className="hover:bg-slate-300 rounded-full px-2">Media</p>
       </div>
-      <button className="max-md:text-xl max-md:hidden" onClick={() => {}}>
-        Contact me
-      </button>
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="max-md:text-xl max-md:hidden"
+      >
+        <a href="mailto:gantogos.bilguun48@gmail.com">Contact me</a>
+      </motion.button>
     </div>
   );
 };
