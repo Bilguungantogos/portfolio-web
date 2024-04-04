@@ -13,6 +13,7 @@ import MySkills from "../griditems/myskills";
 import { isMobile } from "react-device-detect";
 import AboutMe from "../griditems/aboutme";
 import SpotifyItem from "../griditems/spotifyItem";
+import { CinemaAppItem, FoodDeliveryAppItem } from "../griditems/project";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
@@ -103,9 +104,12 @@ export const DragFromOutsideLayout = () => {
         </div>
         <div
           key={layout[2].i}
-          className=" flex justify-center items-center dark:bg-[#0d1117D9] dark:text-white bg-[#FFFFFF] text-[#0F1117] rounded-[32px] "
+          className="rounded-[32px] overflow-hidden relative"
         >
-          {layout[2].i}
+          <FoodDeliveryAppItem />
+          <Button className="w-10 h-10 absolute">
+            to Github adawdadwadwadawdwadwa
+          </Button>
         </div>
         <div
           key={layout[3].i}
@@ -114,21 +118,27 @@ export const DragFromOutsideLayout = () => {
           <Button
             variant="default"
             className="dark:bg-slate-700 bg-slate-300 rounded-[20px] py-6 px-6 lg:text-xl shadow-lg"
+            onMouseDown={(e) => {
+              e.stopPropagation();
+              window.open(
+                "https://www.figma.com/proto/OOYYZWSg6qJ9vZxeOIVoAC/CV-Bilguun-Gantogos?node-id=1-9"
+              );
+            }}
           >
-            Download CV
+            Click to review my CV
           </Button>
         </div>
         <div
           key={layout[4].i}
           className=" flex justify-center items-center dark:bg-[#0d1117D9] dark:text-white bg-[#FFFFFF] text-[#0F1117] rounded-[32px] "
         >
-          h
+          Blank
         </div>
         <div
           key={layout[5].i}
-          className=" flex justify-center items-center dark:bg-[#0d1117D9] dark:text-white bg-[#FFFFFF] text-[#0F1117] rounded-[32px] "
+          className=" flex justify-center items-center dark:bg-[#0d1117D9] dark:text-white bg-[#FFFFFF] text-[#0F1117] rounded-[32px] overflow-hidden"
         >
-          {layout[5].i}
+          <CinemaAppItem />
         </div>
         <div
           key={layout[6].i}
@@ -143,7 +153,8 @@ export const DragFromOutsideLayout = () => {
           <FaGithub />
           <a
             className="absolute bottom-3 left-3 bg-slate-400 rounded-full cursor-pointer"
-            onMouseUp={() => {
+            onMouseDown={(e) => {
+              e.stopPropagation();
               window.open("https://github.com/Bilguungantogos");
             }}
           >

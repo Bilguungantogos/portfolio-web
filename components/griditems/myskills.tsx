@@ -13,7 +13,7 @@ import { IoLogoSass } from "react-icons/io";
 const MySkills = () => {
   return (
     <div className="flex flex-col justify-between select-none ">
-      <p className="text-light text-lg text-slate-300 px-6 max-[481px]:px-4 max-[481px]:text-sm select-none">
+      <p className="text-light text-lg text-slate-600 px-6 max-[481px]:px-4 max-[481px]:text-sm select-none">
         I have been working on a project involving the utilization of these
         languages and tools:
       </p>

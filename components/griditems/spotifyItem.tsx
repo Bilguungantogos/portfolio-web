@@ -35,12 +35,13 @@ const SpotifyItem = () => {
   return (
     <div className="sm:p-3 lg:p-8 md:p-8 xl:p-8 p-3 h-full flex flex-col justify-between">
       <a
-        onMouseUp={() => {
+        onMouseDown={(e) => {
+          e.stopPropagation();
           window.open(
             "https://open.spotify.com/playlist/5B53KpbxKXlM8DPeVEqAhr"
           );
         }}
-        className="cursor-pointer sm:size-[45px] size-[50px]"
+        className="cursor-pointer max-sm:size-[35px] size-[50px]"
       >
         <FaSpotify size={"full"} />
       </a>
