@@ -26,7 +26,7 @@ export const CinemaAppItem = () => {
             margin: "auto",
             display: "block",
           }}
-          className=" max-w-[350px] max-h-[200px] max-[481px]:w-[50px] max-[481px]:h-[20px] object-cover rounded-[32px] overflow-hidden"
+          className=" max-w-[350px] max-h-[200px] max-[481px]:w-[220px] max-[481px]:h-[140px] object-cover rounded-[32px] overflow-hidden"
         />
       </div>
       <div className="absolute bottom-3 left-4 flex gap-2">
@@ -80,7 +80,7 @@ export const FoodDeliveryAppItem = () => {
             margin: "auto",
             display: "block",
           }}
-          className=" max-w-[350px] max-h-[200px] max-[481px]:w-[50px] max-[481px]:h-[20px] object-cover rounded-[32px] overflow-hidden"
+          className=" max-w-[350px] max-h-[200px] max-[481px]:w-[220px] max-[481px]:h-[140px] object-cover rounded-[32px] overflow-hidden"
         />
       </div>
       <div className="absolute bottom-3 left-4 flex gap-2">

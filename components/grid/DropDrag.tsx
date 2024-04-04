@@ -117,7 +117,7 @@ export const DragFromOutsideLayout = () => {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="dark:bg-slate-700 bg-[#F6F2F2] rounded-[20px] py-4 px-6 lg:text-xl shadow-lg"
+            className="dark:bg-slate-700 bg-[#F6F2F2] rounded-[20px]  max-[481px]:text-sm max-[481px]:w-[140px] max-[481px]:h-[80px] py-4 px-6 lg:text-xl shadow-lg"
             onMouseDown={(e: any) => {
               e.stopPropagation();
               window.open(
