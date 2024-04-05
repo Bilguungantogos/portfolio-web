@@ -10,7 +10,7 @@ const Header = () => {
   const { showAllGrid, showAbout, showMedia, showProject } =
     useContext(LayoutContext);
   return (
-    <div className="flex justify-between items-center max-md:flex-col max-md:gap-4 lg:mx-20 md:mx-20 py-4 mt-4 dark:text-white text-black">
+    <div className="flex justify-around items-center max-md:flex-col max-md:gap-4 py-4 mt-4 dark:text-white text-black max-w-[1250px] mx-auto">
       {theme === "light" ? (
         <img
           src="logo.png"
