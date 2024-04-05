@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import ThemeContextProvider from "@/context/theme-context";
+import { LayoutProvider } from "@/context/layout-context";
 
 const sfPRO = localFont({
   src: [
@@ -52,7 +53,9 @@ export default function RootLayout({
     <html lang="en" className="h-full" suppressHydrationWarning>
       <body className={sfPRO.className}>
         <div className="flex-col flex h-full">
-          <ThemeContextProvider>{children}</ThemeContextProvider>
+          <ThemeContextProvider>
+            <LayoutProvider>{children}</LayoutProvider>
+          </ThemeContextProvider>
         </div>
       </body>
     </html>

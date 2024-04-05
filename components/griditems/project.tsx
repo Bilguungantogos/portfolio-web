@@ -38,7 +38,7 @@ export const CinemaAppItem = () => {
           >
             <MdArrowOutward
               size={40}
-              className={`p-2 w-22 h-10 bg-slate-200 text-black rounded-[32px] hover:scale-x-10 transition-transform ${
+              className={`p-3 w-22 h-10 bg-slate-200 text-black rounded-[32px] hover:scale-x-10 transition-transform ${
                 isHovered ? "scale-x-100" : ""
               }`}
               onMouseEnter={() => setIsHovered(true)}
@@ -92,7 +92,7 @@ export const FoodDeliveryAppItem = () => {
           >
             <MdArrowOutward
               size={40}
-              className={`p-2 w-22 h-10 bg-slate-200 text-black rounded-[32px] hover:scale-x-10 transition-transform ${
+              className={`p-3 w-22 h-10 bg-slate-200 text-black rounded-[32px] hover:scale-x-10 transition-transform ${
                 isHovered ? "scale-x-100" : ""
               }`}
               onMouseEnter={() => setIsHovered(true)}
