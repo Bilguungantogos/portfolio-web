@@ -9,6 +9,7 @@ import { SiMysql } from "react-icons/si";
 import { IoLogoNodejs } from "react-icons/io";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { IoLogoSass } from "react-icons/io";
+import { motion } from "framer-motion";
 
 const MySkills = () => {
   return (
@@ -18,91 +19,63 @@ const MySkills = () => {
         languages and tools:
       </p>
       <p className="flex flex-wrap justify-center gap-8 max-[481px]:gap-4">
-        <a
-          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-          target="_blank"
-          rel="noreferrer"
-          className="size-[40px] max-[481px]:size-[30px]"
-        >
-          <IoLogoJavascript size={"full"} />
-        </a>
-        <a
-          href="https://www.typescriptlang.org/"
-          target="_blank"
-          rel="noreferrer"
-          className="size-[40px] max-[481px]:size-[30px]"
-        >
-          <BiLogoTypescript size={"full"} />
-        </a>
-        <a
-          href="https://reactjs.org/"
-          target="_blank"
-          rel="noreferrer"
-          className="size-[40px] max-[481px]:size-[30px]"
-        >
-          <IoLogoReact size={"full"} />
-        </a>
-        <a
-          href="https://nextjs.org/"
-          target="_blank"
-          rel="noreferrer"
-          className="size-[40px] max-[481px]:size-[30px]"
-        >
-          <SiNextdotjs size={"full"} />
-        </a>
-        <a
-          href="https://tailwindcss.com/"
-          target="_blank"
-          rel="noreferrer"
-          className="size-[40px] max-[481px]:size-[30px]"
-        >
-          <TbBrandTailwind size={"full"} />
-        </a>
-
-        <a
-          href="https://www.mongodb.com/"
-          target="_blank"
-          rel="noreferrer"
-          className="size-[40px] max-[481px]:size-[30px]"
-        >
-          <BiLogoMongodb size={"full"} />
-        </a>
-        <a
-          href="https://www.mysql.com/"
-          target="_blank"
-          rel="noreferrer"
-          className="size-[40px] max-[481px]:size-[30px]"
-        >
-          <SiMysql size={"full"} />
-        </a>
-
-        <a
-          href="https://nodejs.org"
-          target="_blank"
-          rel="noreferrer"
-          className="size-[40px] max-[481px]:size-[30px]"
-        >
-          <IoLogoNodejs size={"full"} />
-        </a>
-        <a
-          href="https://www.postgresql.org"
-          target="_blank"
-          rel="noreferrer"
-          className="size-[40px] max-[481px]:size-[30px]"
-        >
-          <BiLogoPostgresql size={"full"} />
-        </a>
-        <a
-          href="https://sass-lang.com"
-          target="_blank"
-          rel="noreferrer"
-          className="size-[40px] max-[481px]:size-[30px]"
-        >
-          <IoLogoSass size={"full"} />
-        </a>
+        {skillIcons.map((e) => {
+          return (
+            <motion.button
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              className="size-[40px] max-[481px]:size-[30px]"
+            >
+              <a href={e.href}>{e.icon}</a>
+            </motion.button>
+          );
+        })}
       </p>
     </div>
   );
 };
 
 export default MySkills;
+
+const skillIcons = [
+  {
+    icon: <IoLogoJavascript size={"full"} />,
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  {
+    icon: <BiLogoTypescript size={"full"} />,
+    href: "https://www.typescriptlang.org/",
+  },
+  {
+    icon: <IoLogoReact size={"full"} />,
+    href: "https://reactjs.org/",
+  },
+  {
+    icon: <SiNextdotjs size={"full"} />,
+    href: "https://nextjs.org/",
+  },
+  {
+    icon: <TbBrandTailwind size={"full"} />,
+    href: "https://tailwindcss.com/",
+  },
+  {
+    icon: <BiLogoMongodb size={"full"} />,
+    href: "https://www.mongodb.com/",
+  },
+  {
+    icon: <SiMysql size={"full"} />,
+    href: "https://www.mysql.com/",
+  },
+  {
+    icon: <IoLogoNodejs size={"full"} />,
+    href: "https://nodejs.org",
+  },
+  {
+    icon: <BiLogoPostgresql size={"full"} />,
+    href: "https://www.postgresql.org",
+  },
+  {
+    icon: <IoLogoSass size={"full"} />,
+    href: "https://sass-lang.com",
+  },
+];

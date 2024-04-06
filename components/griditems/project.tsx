@@ -14,7 +14,7 @@ export const CinemaAppItem = () => {
     >
       <div className="">
         <img
-          src="./fooddelivery.png"
+          src="./cinemaapp.png"
           style={{
             transform: "rotate(-28deg)",
             transformOrigin: "80% 40%",
@@ -26,7 +26,7 @@ export const CinemaAppItem = () => {
             margin: "auto",
             display: "block",
           }}
-          className=" max-w-[350px] max-h-[200px] max-[481px]:w-[220px] max-[481px]:h-[140px] min-[1250px]:w-[500px] min-[1250px]:h-[300px] object-cover rounded-[32px] overflow-hidden"
+          className=" max-w-[350px] max-h-[200px] max-[481px]:w-[220px] max-[481px]:h-[140px] min-[1250px]:w-[500px] min-[1250px]:h-[300px] object-cover border border-slate-50 rounded-[32px] overflow-hidden"
         />
       </div>
       <div className="absolute bottom-3 left-4 flex gap-2">
