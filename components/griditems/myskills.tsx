@@ -62,12 +62,13 @@ const MySkills = () => {
         languages and tools:
       </p>
       <p className="flex flex-wrap justify-center gap-8 max-[481px]:gap-4">
-        {skillIcons.map((e) => {
+        {skillIcons.map((e, i) => {
           return (
             <motion.button
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
               className="size-[40px] max-[481px]:size-[30px]"
+              key={i}
             >
               <a href={e.href}>{e.icon}</a>
             </motion.button>
